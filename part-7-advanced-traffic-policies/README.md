@@ -363,8 +363,8 @@ From your browser go to
 http://bookinfo.local.test:8080/reviews/123
 refresh the page and you will get 50% of the time "podname": "reviews-v1-xxx…" and the other 50% "podname": "reviews-v2-xxx…"
 
-# V1
 ```json
+# V1
 {
   "id": "123",
   "podname": "reviews-v1-5f58978c56-vkdm9",
@@ -380,10 +380,8 @@ refresh the page and you will get 50% of the time "podname": "reviews-v1-xxx…"
     }
   ]
 }
-```
 
 # V2
-```json
 {
   "id": "123",
   "podname": "reviews-v2-6fd544646d-fvj6r",
