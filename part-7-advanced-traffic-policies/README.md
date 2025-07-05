@@ -480,7 +480,8 @@ while true; do curl -s http://bookinfo.local.test:8080/reviews/123 | jq .podname
 This command sends a request every 0.2 seconds and prints which reviews pod handled the response.
 
 **Run this command with and without LEAST_CONN**
-With LEAST_CONN You'll notice that requests tend to group together, often hitting the same pod for several consecutive requests. This is because LEAST_CONN routes traffic to the pod with the fewest active connections, which can cause traffic to temporarily favor one instance over the other.
+
+* With LEAST_CONN, You'll notice that requests tend to group together, often hitting the same pod for several consecutive requests. This is because LEAST_CONN routes traffic to the pod with the fewest active connections, which can cause traffic to temporarily favor one instance over the other.
 ```
 "reviews-v2-7bd564ffc6-mf76d"
 "reviews-v2-7bd564ffc6-mf76d"
@@ -505,7 +506,7 @@ With LEAST_CONN You'll notice that requests tend to group together, often hittin
 "reviews-v2-7bd564ffc6-mf76d"
 "reviews-v1-5f58978c56-w72vq"
 ```
-Without LEAST_CONN, default round-robin, requests are more evenly distributed—not necessarily alternating perfectly, but with less skew. This is expected behavior for the default round-robin policy.
+* Without LEAST_CONN, default round-robin, requests are more evenly distributed—not necessarily alternating perfectly, but with less skew. This is expected behavior for the default round-robin policy.
 ```
 "reviews-v1-5f58978c56-w72vq"
 "reviews-v1-5f58978c56-w72vq"
